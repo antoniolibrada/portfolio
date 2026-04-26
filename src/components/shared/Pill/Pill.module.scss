@@ -1,4 +1,4 @@
-@use '../../../styles/variables' as *;
+@use 'variables' as *;
 
 .pill {
   border: 1px solid var(--rule);
@@ -15,7 +15,7 @@
     background: var(--paper-2);
   }
 
-  &.active {
+  &.pill--active {
     background: var(--ink);
     color: var(--paper);
   }

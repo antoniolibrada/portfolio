@@ -8,7 +8,7 @@ interface DotProps {
 export function Dot({ color = 'var(--teal)', size = 8 }: DotProps) {
   return (
     <span
-      className={styles.dot}
+      className={styles['dot']}
       style={{ background: color, width: size, height: size }}
     />
   );

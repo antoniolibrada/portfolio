@@ -11,7 +11,7 @@ interface PillProps {
 export function Pill({ children, onClick, active, style }: PillProps) {
   return (
     <button
-      className={`${styles.pill} mono ${active ? styles.active : ''}`}
+      className={`${styles['pill']} mono${active ? ` ${styles['pill--active']}` : ''}`}
       onClick={onClick}
       style={style}
     >

@@ -4,11 +4,11 @@
   color: var(--paper);
 }
 
-.inner {
+.principles__inner {
   max-width: 1100px;
 }
 
-.label {
+.principles__label {
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -16,7 +16,7 @@
   margin-bottom: 16px;
 }
 
-.heading {
+.principles__heading {
   font-size: 56px;
   line-height: 1;
   margin: 0 0 60px;
@@ -28,25 +28,30 @@
   }
 }
 
-.grid {
+.principles__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 48px 64px;
 }
 
-.num {
+.principles__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.principles__num {
   font-size: 11px;
   opacity: 0.5;
   margin-bottom: 10px;
 }
 
-.title {
+.principles__title {
   font-size: 26px;
   margin: 0 0 12px;
   font-weight: 500;
 }
 
-.body {
+.principles__body {
   font-size: 15px;
   line-height: 1.6;
   opacity: 0.75;

@@ -1,4 +1,4 @@
-@use '../../styles/variables' as *;
+@use 'variables' as *;
 
 .hero {
   position: relative;
@@ -7,7 +7,7 @@
   background: var(--paper);
 }
 
-.content {
+.hero__content {
   position: relative;
   padding: 80px 56px 120px;
   max-width: 1200px;
@@ -17,12 +17,12 @@
   align-items: center;
 }
 
-.left {
+.hero__left {
   display: flex;
   flex-direction: column;
 }
 
-.kicker {
+.hero__kicker {
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -33,29 +33,29 @@
   gap: 10px;
 }
 
-.headline {
+.hero__headline {
   font-size: clamp(54px, 9vw, 124px);
   line-height: 0.92;
   margin: 0;
   font-weight: 400;
 }
 
-.spacer {
+.hero__spacer {
   display: inline-block;
   width: 0.3em;
 }
 
-.teamSport {
+.hero__team-sport {
   font-style: italic;
   font-weight: 400;
   color: var(--teal-deep);
 }
 
-.connect {
+.hero__connect {
   border-bottom: 3px solid var(--moss);
 }
 
-.body {
+.hero__body {
   max-width: 560px;
   margin-top: 36px;
   font-size: 19px;
@@ -63,19 +63,19 @@
   color: var(--ink-2);
 }
 
-.pills {
+.hero__pills {
   display: flex;
   gap: 12px;
   margin-top: 36px;
   flex-wrap: wrap;
 }
 
-.portraitWrap {
+.hero__portrait-wrap {
   justify-self: end;
   position: relative;
 }
 
-.badge {
+.hero__badge {
   position: absolute;
   bottom: -16px;
   left: -30px;
@@ -90,7 +90,7 @@
   box-shadow: 0 6px 18px -6px oklch(0.3 0.1 200 / 0.25);
 }
 
-.statsStrip {
+.hero__stats-strip {
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -99,11 +99,11 @@
   backdrop-filter: blur(6px);
 }
 
-.stat {
+.hero__stat {
   padding: 22px 28px;
 }
 
-.statKey {
+.hero__stat-key {
   font-size: 10px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -111,7 +111,7 @@
   margin-bottom: 8px;
 }
 
-.statVal {
+.hero__stat-val {
   font-size: 36px;
   font-weight: 500;
 }

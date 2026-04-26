@@ -136,5 +136,5 @@ export function ConstellationField() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className={styles.canvas} />;
+  return <canvas ref={canvasRef} className={styles['constellation-field__canvas']} />;
 }

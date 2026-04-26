@@ -43,8 +43,8 @@ export function Portrait({ size = 280, tone = 'teal', shape = 'blob', shadow = t
   );
 
   return (
-    <div className={styles.portrait} style={{ width: w, height: h, ...style }}>
-      <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} className={styles.svg}>
+    <div className={styles['portrait']} style={{ width: w, height: h, ...style }}>
+      <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} className={styles['portrait__svg']}>
         <defs>
           <pattern id={`stripe${id}`} width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
             <line x1="0" y1="0" x2="0" y2="6" stroke="rgba(255,255,255,0.18)" strokeWidth="1" />
@@ -71,7 +71,7 @@ export function Portrait({ size = 280, tone = 'teal', shape = 'blob', shadow = t
       <img
         src={portraitSrc}
         alt="Portrait"
-        className={styles.img}
+        className={styles['portrait__img']}
         style={{ filter: shadow ? 'drop-shadow(0 14px 20px rgba(20,40,50,0.25))' : 'none' }}
       />
     </div>

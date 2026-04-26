@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 import styles from './ConstellationField.module.scss';
-import { ConstellationField as ConstellationFieldCore } from '../../../src-vanilla/constellation';
+import { ConstellationField as ConstellationFieldCore } from '../../vanilla/constellation';
 
 export function ConstellationField() {
   const canvasRef = useRef<HTMLCanvasElement>(null);

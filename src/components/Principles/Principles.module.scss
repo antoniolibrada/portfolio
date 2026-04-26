@@ -1,20 +1,20 @@
 @use 'variables' as *;
 
 .principles {
-  padding: 120px 56px;
+  padding: $spacing-section-y $spacing-section-x;
   background: var(--ink);
   color: var(--paper);
 }
 
 .principles__inner {
-  max-width: 1100px;
+  max-width: $max-width-inner;
 }
 
 .principles__label {
   font-size: $text-label;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: 0.5;
+  color: var(--paper-muted);
   margin-bottom: 16px;
 }
 
@@ -26,7 +26,7 @@
 
   em {
     font-style: italic;
-    color: oklch(0.82 0.1 155);
+    color: var(--moss-light);
   }
 }
 
@@ -43,7 +43,7 @@
 
 .principles__num {
   font-size: $text-label;
-  opacity: 0.5;
+  color: var(--paper-muted);
   margin-bottom: 10px;
 }
 
@@ -56,6 +56,6 @@
 .principles__body {
   font-size: $text-base;
   line-height: 1.6;
-  opacity: 0.75;
+  color: var(--paper);
   margin: 0;
 }

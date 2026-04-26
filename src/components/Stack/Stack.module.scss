@@ -1,19 +1,19 @@
 @use 'variables' as *;
 
 .stack {
-  padding: 120px 56px;
+  padding: $spacing-section-y $spacing-section-x;
   background: var(--paper);
 }
 
 .stack__inner {
-  max-width: 1100px;
+  max-width: $max-width-inner;
 }
 
 .stack__label {
   font-size: $text-label;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: 0.55;
+  color: var(--ink-2);
   margin-bottom: 40px;
   display: flex;
   align-items: center;

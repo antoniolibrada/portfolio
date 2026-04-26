@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 56px;
+  padding: 28px $spacing-section-x;
   font-size: $text-label;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .nav__role {
-  opacity: 0.45;
+  color: var(--ink-3);
 }
 
 .nav__links {
@@ -36,9 +36,15 @@
     &:hover {
       opacity: 1;
     }
+
+    &:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
   }
 }
 
 .nav__meta {
-  opacity: 0.55;
+  color: var(--ink-2);
 }

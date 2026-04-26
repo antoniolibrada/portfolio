@@ -3,7 +3,7 @@
 .placeholder {
   position: relative;
   overflow: hidden;
-  background: oklch(0.94 0.015 195);
+  background: var(--placeholder-bg);
 
   svg {
     display: block;
@@ -19,5 +19,5 @@
   font-size: $text-label;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  opacity: 0.85;
+  color: var(--ink-2);
 }

@@ -1,19 +1,19 @@
 @use 'variables' as *;
 
 .projects {
-  padding: 120px 56px;
+  padding: $spacing-section-y $spacing-section-x;
   background: var(--paper);
 }
 
 .projects__inner {
-  max-width: 1100px;
+  max-width: $max-width-inner;
 }
 
 .projects__label {
   font-size: $text-label;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: 0.55;
+  color: var(--ink-2);
   margin-bottom: 16px;
   display: flex;
   align-items: center;
@@ -40,7 +40,7 @@
 
 .projects__card {
   border: 1px solid var(--rule);
-  border-radius: 22px;
+  border-radius: $radius-card;
   padding: 26px 28px 30px;
   background: var(--paper);
   position: relative;
@@ -56,7 +56,7 @@
 .projects__node-dot {
   width: 10px;
   height: 10px;
-  border-radius: 999px;
+  border-radius: $radius-pill;
   flex-shrink: 0;
 }
 
@@ -73,7 +73,7 @@
 
 .projects__year {
   font-size: $text-label;
-  opacity: 0.5;
+  color: var(--ink-3);
 }
 
 .projects__title {
@@ -106,5 +106,5 @@
 
 .projects__outcome {
   font-size: $text-label;
-  opacity: 0.55;
+  color: var(--ink-2);
 }

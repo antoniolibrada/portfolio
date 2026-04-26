@@ -4,11 +4,11 @@
   border-top: 1px solid var(--rule);
 }
 
-.inner {
+.contact__inner {
   max-width: 1100px;
 }
 
-.label {
+.contact__label {
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -16,7 +16,7 @@
   margin-bottom: 20px;
 }
 
-.heading {
+.contact__heading {
   font-size: clamp(48px, 7vw, 96px);
   line-height: 0.95;
   margin: 0 0 50px;
@@ -28,18 +28,18 @@
   }
 }
 
-.underline {
+.contact__underline {
   border-bottom: 4px solid var(--moss);
 }
 
-.links {
+.contact__links {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px 40px;
   max-width: 640px;
 }
 
-.link {
+.contact__link {
   display: flex;
   justify-content: space-between;
   padding: 16px 0;
@@ -53,18 +53,18 @@
   }
 }
 
-.linkLabel {
+.contact__link-label {
   font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   opacity: 0.55;
 }
 
-.linkValue {
+.contact__link-value {
   font-size: 15px;
 }
 
-.footer {
+.contact__footer {
   margin-top: 80px;
   font-size: 11px;
   opacity: 0.45;

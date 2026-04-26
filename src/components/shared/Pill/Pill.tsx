@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactNode } from 'react';
-import styles from './Pill.module.scss';
+import './Pill.scss';
 
 interface PillProps {
   children: ReactNode;
@@ -11,7 +11,7 @@ interface PillProps {
 export function Pill({ children, onClick, active, style }: PillProps) {
   return (
     <button
-      className={`${styles.pill} mono ${active ? styles.active : ''}`}
+      className={`pill mono${active ? ' pill--active' : ''}`}
       onClick={onClick}
       style={style}
     >

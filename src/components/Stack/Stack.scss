@@ -3,11 +3,11 @@
   background: var(--paper);
 }
 
-.inner {
+.stack__inner {
   max-width: 1100px;
 }
 
-.label {
+.stack__label {
   font-size: 12px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -18,26 +18,26 @@
   gap: 8px;
 }
 
-.grid {
+.stack__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 }
 
-.groupName {
+.stack__group-name {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 14px;
   color: var(--teal-deep);
 }
 
-.list {
+.stack__list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.item {
+.stack__item {
   font-size: 15px;
   padding: 6px 0;
   border-top: 1px solid var(--rule);

@@ -1,4 +1,4 @@
-import styles from './Dot.module.scss';
+import './Dot.scss';
 
 interface DotProps {
   color?: string;
@@ -8,7 +8,7 @@ interface DotProps {
 export function Dot({ color = 'var(--teal)', size = 8 }: DotProps) {
   return (
     <span
-      className={styles.dot}
+      className="dot"
       style={{ background: color, width: size, height: size }}
     />
   );

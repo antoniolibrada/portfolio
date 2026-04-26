@@ -1,22 +1,22 @@
 import { STACK } from '../../data/content';
 import { Dot } from '../shared/Dot/Dot';
-import styles from './Stack.module.scss';
+import './Stack.scss';
 
 export function Stack() {
   return (
-    <section className={styles.stack}>
-      <div className={styles.inner}>
-        <div className={`${styles.label} mono`}>
+    <section className="stack">
+      <div className="stack__inner">
+        <div className="stack__label mono">
           <Dot color="var(--moss)" />
           05 · Tools of the trade
         </div>
-        <div className={styles.grid}>
+        <div className="stack__grid">
           {STACK.map((s) => (
             <div key={s.g}>
-              <div className={`${styles.groupName} display`}>{s.g}</div>
-              <ul className={styles.list}>
+              <div className="stack__group-name display">{s.g}</div>
+              <ul className="stack__list">
                 {s.items.map((it) => (
-                  <li key={it} className={styles.item}>{it}</li>
+                  <li key={it} className="stack__item">{it}</li>
                 ))}
               </ul>
             </div>

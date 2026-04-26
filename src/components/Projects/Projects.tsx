@@ -1,56 +1,56 @@
 import { PROJECTS } from '../../data/content';
 import { Dot } from '../shared/Dot/Dot';
-import styles from './Projects.module.scss';
+import './Projects.scss';
 
 const HUES = [195, 155, 225, 175];
 
 export function Projects() {
   return (
-    <section id="work" className={styles.projects}>
-      <div className={styles.inner}>
-        <div className={`${styles.label} mono`}>
+    <section id="work" className="projects">
+      <div className="projects__inner">
+        <div className="projects__label mono">
           <Dot color="var(--sky)" />
           03 · Selected nodes
         </div>
 
-        <h2 className={`${styles.heading} display`}>
+        <h2 className="projects__heading display">
           What I've been <em className="serif">connecting</em>.
         </h2>
 
-        <div className={styles.grid}>
+        <div className="projects__grid">
           {PROJECTS.map((p, i) => {
             const hue = HUES[i % HUES.length];
             return (
-              <article key={i} className={styles.card}>
-                <div className={styles.cardHeader}>
+              <article key={i} className="projects__card">
+                <div className="projects__card-header">
                   <span
-                    className={styles.nodeDot}
+                    className="projects__node-dot"
                     style={{
                       background: `oklch(0.6 0.14 ${hue})`,
                       boxShadow: `0 0 0 4px oklch(0.6 0.14 ${hue} / 0.18)`,
                     }}
                   />
                   <span
-                    className={`${styles.cardTag} mono`}
+                    className="projects__card-tag mono"
                     style={{ color: `oklch(0.4 0.1 ${hue})` }}
                   >
                     node · {p.tag}
                   </span>
-                  <span className={styles.dashedRule} />
-                  <span className={`${styles.year} mono`}>{p.year}</span>
+                  <span className="projects__dashed-rule" />
+                  <span className="projects__year mono">{p.year}</span>
                 </div>
 
-                <h3 className={`${styles.title} display`}>{p.title}</h3>
-                <p className={styles.blurb}>{p.blurb}</p>
+                <h3 className="projects__title display">{p.title}</h3>
+                <p className="projects__blurb">{p.blurb}</p>
 
-                <div className={styles.cardFooter}>
+                <div className="projects__card-footer">
                   <span
-                    className={`${styles.metric} display`}
+                    className="projects__metric display"
                     style={{ color: `oklch(0.45 0.12 ${hue})` }}
                   >
                     {p.metric}
                   </span>
-                  <span className={`${styles.outcome} mono`}>→ outcome</span>
+                  <span className="projects__outcome mono">→ outcome</span>
                 </div>
               </article>
             );

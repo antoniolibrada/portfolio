@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import styles from './ConstellationField.module.scss';
+import './ConstellationField.scss';
 
 interface Node {
   x: number;
@@ -136,5 +136,5 @@ export function ConstellationField() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className={styles.canvas} />;
+  return <canvas ref={canvasRef} className="constellation-field__canvas" />;
 }

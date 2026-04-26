@@ -1,5 +1,5 @@
-@use './fonts';
-@use './variables' as *;
+@use 'fonts';
+@use 'variables' as *;
 
 :root {
   --ink: #{$ink};
@@ -7,11 +7,16 @@
   --ink-3: #{$ink-3};
   --paper: #{$paper};
   --paper-2: #{$paper-2};
+  --paper-muted: #{$paper-muted};
   --rule: #{$rule};
   --teal: #{$teal};
   --teal-deep: #{$teal-deep};
   --moss: #{$moss};
+  --moss-light: #{$moss-light};
   --sky: #{$sky};
+  --placeholder-bg: #{$placeholder-bg};
+  --stats-wash: #{$stats-wash};
+  --shadow-teal: #{$shadow-teal};
 }
 
 *,
@@ -67,4 +72,9 @@ body {
 
 a {
   color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
 }

@@ -1,19 +1,19 @@
 @use 'variables' as *;
 
 .timeline {
-  padding: 120px 56px;
+  padding: $spacing-section-y $spacing-section-x;
   background: var(--paper-2);
 }
 
 .timeline__inner {
-  max-width: 1100px;
+  max-width: $max-width-inner;
 }
 
 .timeline__label {
   font-size: $text-label;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: 0.55;
+  color: var(--ink-2);
   margin-bottom: 40px;
   display: flex;
   align-items: center;
@@ -41,7 +41,7 @@
 
 .timeline__year {
   font-size: $text-label;
-  opacity: 0.65;
+  color: var(--ink-2);
 }
 
 .timeline__role {
@@ -59,6 +59,5 @@
 .timeline__org {
   text-align: right;
   font-size: $text-label;
-  opacity: 0.65;
+  color: var(--ink-2);
 }
-

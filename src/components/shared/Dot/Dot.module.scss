@@ -1,6 +1,8 @@
+@use 'variables' as *;
+
 .dot {
   display: inline-block;
-  border-radius: 999px;
+  border-radius: $radius-pill;
   vertical-align: middle;
   flex-shrink: 0;
 }

@@ -4,11 +4,16 @@ $ink-2: oklch(0.42 0.03 215);
 $ink-3: oklch(0.6 0.02 215);
 $paper: oklch(0.985 0.008 180);
 $paper-2: oklch(0.96 0.012 180);
+$paper-muted: oklch(0.72 0.015 180); // muted text on dark (Principles) background
 $rule: oklch(0.86 0.02 195);
 $teal: oklch(0.58 0.12 195);
 $teal-deep: oklch(0.42 0.11 210);
 $moss: oklch(0.64 0.13 155);
+$moss-light: oklch(0.82 0.1 155);    // em accent text on Principles dark background
 $sky: oklch(0.74 0.09 225);
+$placeholder-bg: oklch(0.94 0.015 195); // Placeholder component background tint
+$stats-wash: oklch(0.99 0.006 180 / 0.7); // Hero stats strip semi-transparent wash
+$shadow-teal: oklch(0.3 0.1 200 / 0.25);  // Hero badge teal-tinted shadow
 
 // Font stacks
 $font-sans: 'Geist', system-ui, sans-serif;
@@ -25,3 +30,11 @@ $text-stat:       36px;                    // large numbers and lede text (hero 
 $text-heading-lg: 56px;                    // section headings (projects, principles)
 $text-display:    clamp(54px, 9vw, 124px); // hero display headline
 $text-display-sm: clamp(48px, 7vw, 96px);  // contact display heading
+
+// Spacing and sizing tokens
+$spacing-section-x: 56px;   // horizontal section padding
+$spacing-section-y: 120px;  // vertical section padding
+$max-width-inner:   1100px; // section content max-width
+$radius-pill:       999px;  // pill / dot border-radius
+$radius-card:       22px;   // project card border-radius
+$underline-width:   4px;    // decorative heading underline stroke

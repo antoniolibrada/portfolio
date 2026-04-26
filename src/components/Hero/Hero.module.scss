@@ -2,14 +2,16 @@
 
 .hero {
   position: relative;
-  min-height: 820px;
+  min-height: 100vh;
+  min-height: 100svh;
   overflow: hidden;
   background: var(--paper);
 }
 
 .hero__content {
   position: relative;
-  padding: 80px 56px 120px;
+  // Hero uses 1200px (wider than $max-width-inner) to accommodate the portrait column
+  padding: 80px $spacing-section-x $spacing-section-y;
   max-width: 1200px;
   display: grid;
   grid-template-columns: 1fr 320px;
@@ -26,7 +28,7 @@
   font-size: $text-label;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: 0.55;
+  color: var(--ink-2);
   margin-bottom: 24px;
   display: flex;
   align-items: center;
@@ -52,7 +54,7 @@
 }
 
 .hero__connect {
-  border-bottom: 3px solid var(--moss);
+  border-bottom: $underline-width solid var(--moss);
 }
 
 .hero__body {
@@ -82,12 +84,12 @@
   background: var(--paper);
   border: 1px solid var(--rule);
   padding: 8px 14px;
-  border-radius: 999px;
+  border-radius: $radius-pill;
   font-size: $text-label;
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 6px 18px -6px oklch(0.3 0.1 200 / 0.25);
+  box-shadow: 0 6px 18px -6px var(--shadow-teal);
 }
 
 .hero__stats-strip {
@@ -95,7 +97,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid var(--rule);
-  background: oklch(0.99 0.006 180 / 0.7);
+  background: var(--stats-wash);
   backdrop-filter: blur(6px);
 }
 
@@ -107,7 +109,7 @@
   font-size: $text-label;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  opacity: 0.5;
+  color: var(--ink-3);
   margin-bottom: 8px;
 }
 

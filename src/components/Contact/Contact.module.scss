@@ -1,20 +1,20 @@
 @use 'variables' as *;
 
 .contact {
-  padding: 120px 56px 60px;
+  padding: $spacing-section-y $spacing-section-x 60px;
   background: var(--paper-2);
   border-top: 1px solid var(--rule);
 }
 
 .contact__inner {
-  max-width: 1100px;
+  max-width: $max-width-inner;
 }
 
 .contact__label {
   font-size: $text-label;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: 0.55;
+  color: var(--ink-2);
   margin-bottom: 20px;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .contact__underline {
-  border-bottom: 4px solid var(--moss);
+  border-bottom: $underline-width solid var(--moss);
 }
 
 .contact__links {
@@ -52,6 +52,15 @@
 
   &:hover {
     color: var(--teal-deep);
+
+    .contact__link-label {
+      color: var(--teal-deep);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
   }
 }
 
@@ -59,7 +68,7 @@
   font-size: $text-label;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  opacity: 0.55;
+  color: var(--ink-2);
 }
 
 .contact__link-value {
@@ -69,7 +78,7 @@
 .contact__footer {
   margin-top: 80px;
   font-size: $text-label;
-  opacity: 0.45;
+  color: var(--ink-3);
   display: flex;
   justify-content: space-between;
 }

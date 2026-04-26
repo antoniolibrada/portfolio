@@ -23,6 +23,11 @@
 .timeline__rows {
   display: flex;
   flex-direction: column;
+
+  &::after {
+    content: '';
+    border-top: 1px solid var(--rule);
+  }
 }
 
 .timeline__row {
@@ -57,6 +62,3 @@
   opacity: 0.65;
 }
 
-.timeline__terminator {
-  border-top: 1px solid var(--rule);
-}

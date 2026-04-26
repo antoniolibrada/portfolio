@@ -21,7 +21,6 @@ export function Timeline() {
               <div className={`${styles['timeline__org']} mono`}>@ {t.org}</div>
             </div>
           ))}
-          <div className={styles['timeline__terminator']} />
         </div>
       </div>
     </section>

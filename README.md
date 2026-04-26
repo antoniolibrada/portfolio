@@ -7,7 +7,10 @@ Personal portfolio site built with **Vite + React + TypeScript**, implementing t
 - [Vite](https://vite.dev/) — build tool and dev server
 - [React 19](https://react.dev/) — UI
 - [TypeScript](https://www.typescriptlang.org/) — type safety
-- [SCSS Modules](https://sass-lang.com/) — scoped styles per component
+- [SCSS Modules](https://sass-lang.com/) — scoped styles per component, BEM naming convention
+- [PostCSS](https://postcss.org/) — CSS post-processing (autoprefixer, modern color conversion)
+- [Autoprefixer](https://github.com/postcss/autoprefixer) — vendor prefix injection
+- [postcss-preset-env](https://preset-env.cssdb.org/) — OKLCH → `color(display-p3)` + hex fallbacks
 
 ## Design
 
@@ -44,7 +47,32 @@ src/
         └── Portrait/              # Photo with blob/arch/square backdrop
 ```
 
-Each component ships with a colocated `.module.scss` file that imports tokens via `@use '../../styles/variables'`.
+Each component ships with a colocated `.module.scss` file. Class names follow **BEM** (`block__element--modifier`) and are accessed in TSX via bracket notation — e.g. `styles['hero__stat-key']` — so the same names work as plain CSS class strings in a future vanilla JS build.
+
+### CSS preprocessing pipeline
+
+The full pipeline for every `.module.scss` file is:
+
+```
+SCSS source → Sass compiler → PostCSS → output CSS
+```
+
+| Stage | Tool | What it does |
+|---|---|---|
+| 1 | **Sass** | Compiles SCSS, resolves `@use 'variables'` via `loadPaths` |
+| 2 | **postcss-preset-env** (stage 2) | Converts `oklch()` to `color(display-p3)` with hex fallbacks for older browsers |
+| 3 | **Autoprefixer** | Injects `-webkit-`/`-moz-` vendor prefixes where needed |
+
+SCSS variables (`$ink`, `$teal`, `$font-mono`, etc.) are available in any component stylesheet via `@use 'variables' as *` — the `src/styles` directory is on the Sass load path, so no relative paths are needed.
+
+### CSS Modules scoping
+
+CSS Modules class names are scoped at build time using `generateScopedName`:
+
+| Environment | Format | Example output |
+|---|---|---|
+| Development | `[name]_[local]` | `Hero_hero__content` — readable in DevTools |
+| Production | `[hash:base64:5]` | `_3xK9a` — short and collision-free |
 
 ## Getting started
 

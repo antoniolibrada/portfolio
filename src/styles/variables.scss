@@ -1,0 +1,17 @@
+// Design tokens — mirrors the CSS custom properties from the original design
+$ink: oklch(0.24 0.04 220);
+$ink-2: oklch(0.42 0.03 215);
+$ink-3: oklch(0.6 0.02 215);
+$paper: oklch(0.985 0.008 180);
+$paper-2: oklch(0.96 0.012 180);
+$rule: oklch(0.86 0.02 195);
+$teal: oklch(0.58 0.12 195);
+$teal-deep: oklch(0.42 0.11 210);
+$moss: oklch(0.64 0.13 155);
+$sky: oklch(0.74 0.09 225);
+
+// Font stacks
+$font-sans: 'Geist', system-ui, sans-serif;
+$font-mono: 'JetBrains Mono', monospace;
+$font-serif: 'Instrument Serif', serif;
+$font-display: 'Bricolage Grotesque', system-ui, sans-serif;

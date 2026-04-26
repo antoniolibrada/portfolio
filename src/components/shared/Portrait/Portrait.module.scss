@@ -1,0 +1,17 @@
+.portrait {
+  position: relative;
+}
+
+.svg {
+  position: absolute;
+  inset: 0;
+}
+
+.img {
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+  width: 90%;
+  height: auto;
+  pointer-events: none;
+}

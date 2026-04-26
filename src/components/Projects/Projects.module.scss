@@ -1,0 +1,108 @@
+.projects {
+  padding: 120px 56px;
+  background: var(--paper);
+}
+
+.inner {
+  max-width: 1100px;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.heading {
+  font-size: 56px;
+  line-height: 1;
+  margin: 0 0 60px;
+  font-weight: 400;
+
+  em {
+    font-style: italic;
+    color: var(--teal-deep);
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  border: 1px solid var(--rule);
+  border-radius: 22px;
+  padding: 26px 28px 30px;
+  background: var(--paper);
+  position: relative;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.nodeDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.cardTag {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.dashedRule {
+  flex: 1;
+  border-top: 1px dashed var(--rule);
+}
+
+.year {
+  font-size: 11px;
+  opacity: 0.5;
+}
+
+.title {
+  font-size: 28px;
+  line-height: 1.1;
+  margin: 4px 0 10px;
+  font-weight: 500;
+}
+
+.blurb {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-2);
+  margin: 0;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--rule);
+}
+
+.metric {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.outcome {
+  font-size: 11px;
+  opacity: 0.55;
+}

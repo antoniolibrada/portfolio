@@ -1,0 +1,61 @@
+@use './variables' as *;
+
+:root {
+  --ink: #{$ink};
+  --ink-2: #{$ink-2};
+  --ink-3: #{$ink-3};
+  --paper: #{$paper};
+  --paper-2: #{$paper-2};
+  --rule: #{$rule};
+  --teal: #{$teal};
+  --teal-deep: #{$teal-deep};
+  --moss: #{$moss};
+  --sky: #{$sky};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: $font-sans;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.mono {
+  font-family: $font-mono;
+}
+
+.serif {
+  font-family: $font-serif;
+}
+
+.display {
+  font-family: $font-display;
+  letter-spacing: -0.02em;
+}
+
+// Hide scrollbar while keeping scroll functionality
+.scroll-hide {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+a {
+  color: inherit;
+}

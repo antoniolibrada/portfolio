@@ -1,0 +1,21 @@
+.placeholder {
+  position: relative;
+  overflow: hidden;
+  background: oklch(0.94 0.015 195);
+
+  svg {
+    display: block;
+  }
+}
+
+.label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}

@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .contact {
   padding: 120px 56px 60px;
   background: var(--paper-2);
@@ -9,7 +11,7 @@
 }
 
 .contact__label {
-  font-size: 12px;
+  font-size: $text-label;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   opacity: 0.55;
@@ -17,7 +19,7 @@
 }
 
 .contact__heading {
-  font-size: clamp(48px, 7vw, 96px);
+  font-size: $text-display-sm;
   line-height: 0.95;
   margin: 0 0 50px;
   font-weight: 400;
@@ -54,19 +56,19 @@
 }
 
 .contact__link-label {
-  font-size: 11px;
+  font-size: $text-label;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   opacity: 0.55;
 }
 
 .contact__link-value {
-  font-size: 15px;
+  font-size: $text-base;
 }
 
 .contact__footer {
   margin-top: 80px;
-  font-size: 11px;
+  font-size: $text-label;
   opacity: 0.45;
   display: flex;
   justify-content: space-between;

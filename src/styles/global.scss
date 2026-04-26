@@ -21,12 +21,20 @@
   padding: 0;
 }
 
+html {
+  font-size: 16px;
+}
+
 html,
 body {
   background: var(--paper);
   color: var(--ink);
   font-family: $font-sans;
   -webkit-font-smoothing: antialiased;
+}
+
+body {
+  line-height: 1.5;
 }
 
 #root {

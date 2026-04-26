@@ -1,5 +1,7 @@
+@use 'variables' as *;
+
 .stack {
-  padding: 100px 56px;
+  padding: 120px 56px;
   background: var(--paper);
 }
 
@@ -8,7 +10,7 @@
 }
 
 .stack__label {
-  font-size: 12px;
+  font-size: $text-label;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   opacity: 0.55;
@@ -25,7 +27,7 @@
 }
 
 .stack__group-name {
-  font-size: 20px;
+  font-size: $text-ui;
   font-weight: 500;
   margin-bottom: 14px;
   color: var(--teal-deep);
@@ -38,7 +40,7 @@
 }
 
 .stack__item {
-  font-size: 15px;
+  font-size: $text-base;
   padding: 6px 0;
   border-top: 1px solid var(--rule);
   color: var(--ink-2);

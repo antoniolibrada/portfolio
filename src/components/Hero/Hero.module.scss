@@ -23,7 +23,7 @@
 }
 
 .hero__kicker {
-  font-size: 12px;
+  font-size: $text-label;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   opacity: 0.55;
@@ -34,7 +34,7 @@
 }
 
 .hero__headline {
-  font-size: clamp(54px, 9vw, 124px);
+  font-size: $text-display;
   line-height: 0.92;
   margin: 0;
   font-weight: 400;
@@ -58,7 +58,7 @@
 .hero__body {
   max-width: 560px;
   margin-top: 36px;
-  font-size: 19px;
+  font-size: $text-body-lg;
   line-height: 1.55;
   color: var(--ink-2);
 }
@@ -83,7 +83,7 @@
   border: 1px solid var(--rule);
   padding: 8px 14px;
   border-radius: 999px;
-  font-size: 11px;
+  font-size: $text-label;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -104,7 +104,7 @@
 }
 
 .hero__stat-key {
-  font-size: 10px;
+  font-size: $text-label;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   opacity: 0.5;
@@ -112,6 +112,6 @@
 }
 
 .hero__stat-val {
-  font-size: 36px;
+  font-size: $text-stat;
   font-weight: 500;
 }

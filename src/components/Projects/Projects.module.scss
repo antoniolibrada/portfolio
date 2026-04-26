@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .projects {
   padding: 120px 56px;
   background: var(--paper);
@@ -8,7 +10,7 @@
 }
 
 .projects__label {
-  font-size: 12px;
+  font-size: $text-label;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   opacity: 0.55;
@@ -19,7 +21,7 @@
 }
 
 .projects__heading {
-  font-size: 56px;
+  font-size: $text-heading-lg;
   line-height: 1;
   margin: 0 0 60px;
   font-weight: 400;
@@ -59,7 +61,7 @@
 }
 
 .projects__card-tag {
-  font-size: 11px;
+  font-size: $text-label;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -70,19 +72,19 @@
 }
 
 .projects__year {
-  font-size: 11px;
+  font-size: $text-label;
   opacity: 0.5;
 }
 
 .projects__title {
-  font-size: 28px;
+  font-size: $text-heading-sm;
   line-height: 1.1;
   margin: 4px 0 10px;
   font-weight: 500;
 }
 
 .projects__blurb {
-  font-size: 15px;
+  font-size: $text-base;
   line-height: 1.55;
   color: var(--ink-2);
   margin: 0;
@@ -98,11 +100,11 @@
 }
 
 .projects__metric {
-  font-size: 28px;
+  font-size: $text-heading-sm;
   font-weight: 500;
 }
 
 .projects__outcome {
-  font-size: 11px;
+  font-size: $text-label;
   opacity: 0.55;
 }

@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .principles {
   padding: 120px 56px;
   background: var(--ink);
@@ -9,7 +11,7 @@
 }
 
 .principles__label {
-  font-size: 12px;
+  font-size: $text-label;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   opacity: 0.5;
@@ -17,7 +19,7 @@
 }
 
 .principles__heading {
-  font-size: 56px;
+  font-size: $text-heading-lg;
   line-height: 1;
   margin: 0 0 60px;
   font-weight: 400;
@@ -40,19 +42,19 @@
 }
 
 .principles__num {
-  font-size: 11px;
+  font-size: $text-label;
   opacity: 0.5;
   margin-bottom: 10px;
 }
 
 .principles__title {
-  font-size: 26px;
+  font-size: $text-heading-sm;
   margin: 0 0 12px;
   font-weight: 500;
 }
 
 .principles__body {
-  font-size: 15px;
+  font-size: $text-base;
   line-height: 1.6;
   opacity: 0.75;
   margin: 0;

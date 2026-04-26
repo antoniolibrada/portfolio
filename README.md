@@ -74,6 +74,36 @@ CSS Modules class names are scoped at build time using `generateScopedName`:
 | Development | `[name]_[local]` | `Hero_hero__content` — readable in DevTools |
 | Production | `[hash:base64:5]` | `_3xK9a` — short and collision-free |
 
+## Vanilla TypeScript usage
+
+The constellation animation lives in `src-vanilla/constellation.ts` as a plain class with zero framework dependencies. It can be dropped into any HTML page or bundled without React.
+
+```ts
+import { ConstellationField } from './src-vanilla/constellation';
+
+const canvas = document.querySelector<HTMLCanvasElement>('#bg')!;
+const field = new ConstellationField();
+field.mount(canvas);
+
+// Tear down when done (removes listeners, cancels rAF, disconnects ResizeObserver)
+// field.destroy();
+```
+
+The canvas element must already be in the DOM and have non-zero CSS dimensions before `mount()` is called. `destroy()` is safe to call at any time and is idempotent.
+
+Type-check the vanilla module in isolation:
+
+```bash
+npx tsc --project tsconfig.vanilla.json --noEmit
+```
+
+### API
+
+| Method | Description |
+|--------|-------------|
+| `mount(canvas)` | Initialises nodes, starts the animation loop, attaches mouse + resize listeners |
+| `destroy()` | Cancels `requestAnimationFrame`, disconnects `ResizeObserver`, removes all event listeners |
+
 ## Getting started
 
 ```bash

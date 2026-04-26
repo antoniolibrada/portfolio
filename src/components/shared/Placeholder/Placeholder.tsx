@@ -1,6 +1,6 @@
 import { useId } from 'react';
 import type { CSSProperties } from 'react';
-import './Placeholder.scss';
+import styles from './Placeholder.module.scss';
 
 type Tone = 'teal' | 'moss' | 'sky';
 
@@ -23,7 +23,7 @@ export function Placeholder({ label = 'CASE STUDY', w = '100%', h = 160, tone = 
   const fill = TONE_FILLS[tone];
 
   return (
-    <div className="placeholder" style={{ width: w, height: h, ...style }}>
+    <div className={styles['placeholder']} style={{ width: w, height: h, ...style }}>
       <svg width="100%" height="100%" viewBox="0 0 200 100" preserveAspectRatio="none">
         <defs>
           <pattern id={`p${id}`} width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -32,7 +32,7 @@ export function Placeholder({ label = 'CASE STUDY', w = '100%', h = 160, tone = 
         </defs>
         <rect width="200" height="100" fill={`url(#p${id})`} />
       </svg>
-      <div className="placeholder__label mono" style={{ color: fill }}>
+      <div className={`${styles['placeholder__label']} mono`} style={{ color: fill }}>
         {label}
       </div>
     </div>

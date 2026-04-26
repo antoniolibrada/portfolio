@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .placeholder {
   position: relative;
   overflow: hidden;
@@ -14,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: $text-label;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   opacity: 0.85;

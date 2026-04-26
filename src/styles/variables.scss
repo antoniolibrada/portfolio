@@ -15,3 +15,13 @@ $font-sans: 'Geist', system-ui, sans-serif;
 $font-mono: 'JetBrains Mono', monospace;
 $font-serif: 'Instrument Serif', serif;
 $font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+
+// Type scale — all font-size declarations must reference one of these tokens
+$text-label:      12px;                    // labels, kickers, badges, pills, nav, metadata
+$text-base:       15px;                    // body copy (principles, projects, stack)
+$text-body:       17px;                    // prose body (about, hero)
+$text-heading-sm: 28px;                    // section sub-headings (timeline role, projects/principles title)
+$text-stat:       36px;                    // large numbers and lede text (hero stats, about lede)
+$text-heading-lg: 56px;                    // section headings (projects, principles)
+$text-display:    clamp(54px, 9vw, 124px); // hero display headline
+$text-display-sm: clamp(48px, 7vw, 96px);  // contact display heading

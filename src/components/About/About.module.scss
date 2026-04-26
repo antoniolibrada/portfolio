@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .about {
   padding: 120px 56px;
   background: var(--paper);
@@ -12,7 +14,7 @@
 }
 
 .about__label {
-  font-size: 12px;
+  font-size: $text-label;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   opacity: 0.55;
@@ -27,14 +29,14 @@
 }
 
 .about__lede {
-  font-size: 34px;
+  font-size: $text-stat;
   line-height: 1.3;
   margin: 0;
   font-weight: 400;
 }
 
 .about__text {
-  font-size: 17px;
+  font-size: $text-body;
   line-height: 1.65;
   color: var(--ink-2);
   margin-top: 28px;

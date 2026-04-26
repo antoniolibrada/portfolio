@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .timeline {
   padding: 120px 56px;
   background: var(--paper-2);
@@ -8,7 +10,7 @@
 }
 
 .timeline__label {
-  font-size: 12px;
+  font-size: $text-label;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   opacity: 0.55;
@@ -33,25 +35,25 @@
 }
 
 .timeline__year {
-  font-size: 13px;
+  font-size: $text-label;
   opacity: 0.65;
 }
 
 .timeline__role {
-  font-size: 28px;
+  font-size: $text-heading-sm;
   font-weight: 500;
   line-height: 1.1;
 }
 
 .timeline__note {
-  font-size: 15px;
+  font-size: $text-base;
   color: var(--ink-2);
   margin-top: 8px;
 }
 
 .timeline__org {
   text-align: right;
-  font-size: 13px;
+  font-size: $text-label;
   opacity: 0.65;
 }
 

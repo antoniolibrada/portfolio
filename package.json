@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:vanilla": "vite --config vite.vanilla.config.ts",
     "build": "tsc -b && vite build",
+    "build:vanilla": "tsc -b && vite build --config vite.vanilla.config.ts",
     "lint": "eslint .",
     "preview": "vite preview",
     "test:unit": "vitest run",

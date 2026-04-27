@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { ConstellationField } from './constellation';
+import { ConstellationField, DEFAULT_SEED } from './constellation';
 
 // Private-state accessor helpers — TypeScript `private` is compile-time only
 type FieldInternals = {
@@ -77,6 +77,13 @@ describe('ConstellationField', () => {
       this.disconnect = roMock.disconnect;
     }));
     vi.stubGlobal('devicePixelRatio', 1);
+    // Default: no reduced-motion preference
+    vi.stubGlobal('matchMedia', vi.fn().mockReturnValue({
+      matches: false, media: '', onchange: null,
+      addListener: vi.fn(), removeListener: vi.fn(),
+      addEventListener: vi.fn(), removeEventListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+    }));
 
     field = new ConstellationField();
   });
@@ -319,6 +326,114 @@ describe('ConstellationField', () => {
       capturedLoop(1016); // x = 0.001 - 0.001*16 = -0.015 → wraps to 1
 
       expect(nodes[0].x).toBe(1);
+    });
+  });
+
+  // ─── static mode ──────────────────────────────────────────────────────────
+
+  describe('static mode', () => {
+    it('does not start requestAnimationFrame', () => {
+      field.mount(canvas, { static: true });
+      expect(window.requestAnimationFrame).not.toHaveBeenCalled();
+    });
+
+    it('renders 72 arcs immediately on mount (no loop needed)', () => {
+      field.mount(canvas, { static: true });
+      expect(ctx.arc).toHaveBeenCalledTimes(72);
+    });
+
+    it('does not attach mouse event listeners', () => {
+      const spy = vi.spyOn(canvas, 'addEventListener');
+      field.mount(canvas, { static: true });
+      expect(spy).not.toHaveBeenCalledWith('mousemove', expect.any(Function));
+      expect(spy).not.toHaveBeenCalledWith('mouseleave', expect.any(Function));
+    });
+
+    it('re-renders when the ResizeObserver fires', () => {
+      field.mount(canvas, { static: true });
+      const arcsBefore = ctx.arc.mock.calls.length; // 72 from initial render
+
+      vi.spyOn(canvas, 'getBoundingClientRect').mockReturnValue({
+        width: 1200, height: 900, left: 0, top: 0,
+        right: 1200, bottom: 900, x: 0, y: 0,
+        toJSON: () => '',
+      } as DOMRect);
+      roCallback([], roMock as unknown as ResizeObserver);
+
+      expect(ctx.arc.mock.calls.length).toBe(arcsBefore + 72);
+    });
+
+    it('produces identical node positions on repeated mounts with the same seed', () => {
+      field.mount(canvas, { static: true });
+      const snap1 = internals(field).nodes.map(n => ({ x: n.x, y: n.y }));
+
+      field.destroy();
+      field = new ConstellationField();
+      field.mount(canvas, { static: true });
+      const snap2 = internals(field).nodes.map(n => ({ x: n.x, y: n.y }));
+
+      expect(snap1).toEqual(snap2);
+    });
+
+    it('produces different positions with a different seed', () => {
+      field.mount(canvas, { static: true, seed: DEFAULT_SEED });
+      const snap1 = internals(field).nodes.map(n => ({ x: n.x, y: n.y }));
+
+      field.destroy();
+      field = new ConstellationField();
+      field.mount(canvas, { static: true, seed: DEFAULT_SEED + 1 });
+      const snap2 = internals(field).nodes.map(n => ({ x: n.x, y: n.y }));
+
+      expect(snap1).not.toEqual(snap2);
+    });
+
+    it('destroy works correctly in static mode', () => {
+      field.mount(canvas, { static: true });
+      expect(() => field.destroy()).not.toThrow();
+      expect(roMock.disconnect).toHaveBeenCalledOnce();
+    });
+  });
+
+  // ─── reduced-motion ───────────────────────────────────────────────────────
+
+  describe('reduced-motion', () => {
+    function stubReducedMotion() {
+      vi.stubGlobal('matchMedia', vi.fn((query: string) => ({
+        matches: query === '(prefers-reduced-motion: reduce)',
+        media: query,
+        onchange: null,
+        addListener: vi.fn(), removeListener: vi.fn(),
+        addEventListener: vi.fn(), removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      })));
+    }
+
+    it('auto-activates static mode when prefers-reduced-motion: reduce is set', () => {
+      stubReducedMotion();
+      field.mount(canvas);
+      expect(window.requestAnimationFrame).not.toHaveBeenCalled();
+      expect(ctx.arc).toHaveBeenCalledTimes(72);
+    });
+
+    it('does not attach mouse listeners when prefers-reduced-motion is active', () => {
+      stubReducedMotion();
+      const spy = vi.spyOn(canvas, 'addEventListener');
+      field.mount(canvas);
+      expect(spy).not.toHaveBeenCalledWith('mousemove', expect.any(Function));
+      expect(spy).not.toHaveBeenCalledWith('mouseleave', expect.any(Function));
+    });
+
+    it('uses DEFAULT_SEED and matches explicit static: true layout', () => {
+      stubReducedMotion();
+      field.mount(canvas);
+      const reducedPos = internals(field).nodes.map(n => ({ x: n.x, y: n.y }));
+
+      field.destroy();
+      field = new ConstellationField();
+      field.mount(canvas, { static: true }); // same default seed, no reduced-motion
+      const explicitPos = internals(field).nodes.map(n => ({ x: n.x, y: n.y }));
+
+      expect(reducedPos).toEqual(explicitPos);
     });
   });
 });

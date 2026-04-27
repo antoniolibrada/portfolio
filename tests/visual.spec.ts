@@ -11,6 +11,12 @@ const SECTIONS = [
 ] as const;
 
 async function loadPage(page: Page) {
+  // Activate static-mode constellation via the reduced-motion media feature.
+  // The ConstellationField class detects this and renders a single deterministic
+  // frame (seeded PRNG) instead of starting the animation loop, making the
+  // hero canvas pixel-stable across runs without masking it.
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+
   await page.goto('/');
   await page.waitForLoadState('networkidle');
   await page.evaluate(() => document.fonts.ready);
@@ -29,8 +35,6 @@ for (const [index, name] of SECTIONS.entries()) {
 
     await expect(section).toHaveScreenshot(`${name}.png`, {
       maxDiffPixelRatio: 0.02,
-      // Mask the animated canvas in the hero so it doesn't cause flaky diffs
-      ...(name === 'hero' && { mask: [page.locator('canvas')] }),
     });
   });
 }

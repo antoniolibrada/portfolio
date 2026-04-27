@@ -79,7 +79,7 @@ CSS Modules class names are scoped at build time using `generateScopedName`:
 The constellation animation lives in `src-vanilla/constellation.ts` as a plain class with zero framework dependencies. It can be dropped into any HTML page or bundled without React.
 
 ```ts
-import { ConstellationField } from './src-vanilla/constellation';
+import { ConstellationField } from './src/vanilla/constellation';
 
 const canvas = document.querySelector<HTMLCanvasElement>('#bg')!;
 const field = new ConstellationField();
@@ -91,18 +91,41 @@ field.mount(canvas);
 
 The canvas element must already be in the DOM and have non-zero CSS dimensions before `mount()` is called. `destroy()` is safe to call at any time and is idempotent.
 
+### Static / reduced-motion mode
+
+When `prefers-reduced-motion: reduce` is active in the OS or browser, the class detects it automatically and switches to static mode: nodes are placed with a seeded PRNG (deterministic layout), the canvas is rendered once, and no animation loop or mouse listeners are started. This makes it safe for accessibility and for pixel-stable regression screenshots.
+
+You can also force static mode explicitly — useful in tests:
+
+```ts
+// Explicit static with the default seed (always the same layout)
+field.mount(canvas, { static: true });
+
+// Custom seed — different deterministic layout
+field.mount(canvas, { static: true, seed: 0xdeadbeef });
+```
+
+### API
+
+| Method / export | Description |
+|---|---|
+| `mount(canvas, options?)` | Initialises nodes, starts the animation loop (or renders once in static mode), attaches resize listener |
+| `destroy()` | Cancels `requestAnimationFrame`, disconnects `ResizeObserver`, removes all event listeners |
+| `ConstellationOptions.static` | `boolean` — force static mode (default `false`) |
+| `ConstellationOptions.seed` | `number` — PRNG seed for static mode (default `DEFAULT_SEED`) |
+| `DEFAULT_SEED` | Exported constant — the seed used when none is supplied |
+
 Type-check the vanilla module in isolation:
 
 ```bash
 npx tsc --project tsconfig.vanilla.json --noEmit
 ```
 
-### API
+Run unit tests:
 
-| Method | Description |
-|--------|-------------|
-| `mount(canvas)` | Initialises nodes, starts the animation loop, attaches mouse + resize listeners |
-| `destroy()` | Cancels `requestAnimationFrame`, disconnects `ResizeObserver`, removes all event listeners |
+```bash
+npm run test:unit
+```
 
 ## Getting started
 

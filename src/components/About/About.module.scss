@@ -4,6 +4,14 @@
   padding: $spacing-section-y $spacing-section-x;
   background: var(--paper);
   border-top: 1px solid var(--rule);
+
+  @media (max-width: #{$bp-md}) {
+    padding: $spacing-section-y-md $spacing-section-x-md;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    padding: $spacing-section-y-sm $spacing-section-x-sm;
+  }
 }
 
 .about__inner {
@@ -11,6 +19,11 @@
   grid-template-columns: 1fr 2fr;
   gap: 80px;
   max-width: $max-width-inner;
+
+  @media (max-width: #{$bp-md}) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
 .about__label {
@@ -33,6 +46,10 @@
   line-height: 1.3;
   margin: 0;
   font-weight: 400;
+
+  @media (max-width: #{$bp-sm}) {
+    font-size: 28px;
+  }
 }
 
 .about__text {

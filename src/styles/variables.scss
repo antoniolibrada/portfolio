@@ -38,3 +38,19 @@ $max-width-inner:   1100px; // section content max-width
 $radius-pill:       999px;  // pill / dot border-radius
 $radius-card:       22px;   // project card border-radius
 $underline-width:   4px;    // decorative heading underline stroke
+
+// Responsive breakpoints
+$bp-sm:   480px;   // small mobile — portrait hidden, stack 1-col
+$bp-card: 600px;   // card grids collapse to single column
+$bp-md:   768px;   // tablet portrait — nav hamburger, major reflows
+$bp-lg:   1100px;  // matches $max-width-inner
+
+// Responsive spacing — section padding at each breakpoint
+$spacing-section-x-md: 24px;  // tablet horizontal padding
+$spacing-section-x-sm: 16px;  // mobile horizontal padding
+$spacing-section-y-md: 80px;  // tablet vertical padding
+$spacing-section-y-sm: 60px;  // mobile vertical padding
+
+// Responsive type — large section heading scaled for smaller viewports
+$text-heading-lg-md: 40px;
+$text-heading-lg-sm: 32px;

@@ -3,6 +3,14 @@
 .projects {
   padding: $spacing-section-y $spacing-section-x;
   background: var(--paper);
+
+  @media (max-width: #{$bp-md}) {
+    padding: $spacing-section-y-md $spacing-section-x-md;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    padding: $spacing-section-y-sm $spacing-section-x-sm;
+  }
 }
 
 .projects__inner {
@@ -30,12 +38,26 @@
     font-style: italic;
     color: var(--teal-deep);
   }
+
+  @media (max-width: #{$bp-md}) {
+    font-size: $text-heading-lg-md;
+    margin-bottom: $text-heading-lg-md;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    font-size: $text-heading-lg-sm;
+    margin-bottom: $text-heading-lg-sm;
+  }
 }
 
 .projects__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+
+  @media (max-width: #{$bp-card}) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .projects__card {

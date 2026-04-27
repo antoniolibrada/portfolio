@@ -4,6 +4,14 @@
   padding: $spacing-section-y $spacing-section-x 60px;
   background: var(--paper-2);
   border-top: 1px solid var(--rule);
+
+  @media (max-width: #{$bp-md}) {
+    padding: $spacing-section-y-md $spacing-section-x-md 48px;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    padding: $spacing-section-y-sm $spacing-section-x-sm 40px;
+  }
 }
 
 .contact__inner {
@@ -28,6 +36,10 @@
     font-style: italic;
     color: var(--teal-deep);
   }
+
+  @media (max-width: #{$bp-md}) {
+    margin-bottom: 36px;
+  }
 }
 
 .contact__underline {
@@ -39,6 +51,12 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 14px 40px;
   max-width: 640px;
+
+  @media (max-width: #{$bp-card}) {
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 100%;
+  }
 }
 
 .contact__link {
@@ -81,4 +99,10 @@
   color: var(--ink-3);
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: #{$bp-sm}) {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 48px;
+  }
 }

@@ -3,6 +3,14 @@
 .stack {
   padding: $spacing-section-y $spacing-section-x;
   background: var(--paper);
+
+  @media (max-width: #{$bp-md}) {
+    padding: $spacing-section-y-md $spacing-section-x-md;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    padding: $spacing-section-y-sm $spacing-section-x-sm;
+  }
 }
 
 .stack__inner {
@@ -24,6 +32,16 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
+
+  @media (max-width: #{$bp-md}) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
 
 .stack__group-name {

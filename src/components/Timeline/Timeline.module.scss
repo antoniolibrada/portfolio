@@ -3,6 +3,14 @@
 .timeline {
   padding: $spacing-section-y $spacing-section-x;
   background: var(--paper-2);
+
+  @media (max-width: #{$bp-md}) {
+    padding: $spacing-section-y-md $spacing-section-x-md;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    padding: $spacing-section-y-sm $spacing-section-x-sm;
+  }
 }
 
 .timeline__inner {
@@ -37,6 +45,17 @@
   padding: 28px 0;
   border-top: 1px solid var(--rule);
   align-items: baseline;
+
+  @media (max-width: #{$bp-md}) {
+    grid-template-columns: 80px 1fr;
+    gap: 20px;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 20px 0;
+  }
 }
 
 .timeline__year {
@@ -48,6 +67,10 @@
   font-size: $text-heading-sm;
   font-weight: 500;
   line-height: 1.1;
+
+  @media (max-width: #{$bp-sm}) {
+    font-size: 22px;
+  }
 }
 
 .timeline__note {
@@ -60,4 +83,14 @@
   text-align: right;
   font-size: $text-label;
   color: var(--ink-2);
+
+  @media (max-width: #{$bp-md}) {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    grid-column: auto;
+    text-align: left;
+  }
 }

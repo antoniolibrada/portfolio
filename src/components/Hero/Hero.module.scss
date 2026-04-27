@@ -17,6 +17,17 @@
   grid-template-columns: 1fr 320px;
   gap: 48px;
   align-items: center;
+
+  @media (max-width: #{$bp-md}) {
+    grid-template-columns: 1fr;
+    padding: $spacing-section-y-sm $spacing-section-x-md $spacing-section-y-md;
+    gap: 40px;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    padding: 48px $spacing-section-x-sm $spacing-section-y-sm;
+    gap: 32px;
+  }
 }
 
 .hero__left {
@@ -75,6 +86,14 @@
 .hero__portrait-wrap {
   justify-self: end;
   position: relative;
+
+  @media (max-width: #{$bp-md}) {
+    justify-self: center;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    display: none;
+  }
 }
 
 .hero__badge {
@@ -99,10 +118,28 @@
   border-top: 1px solid var(--rule);
   background: var(--stats-wash);
   backdrop-filter: blur(6px);
+
+  @media (max-width: #{$bp-md}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .hero__stat {
   padding: 22px 28px;
+
+  @media (max-width: #{$bp-md}) {
+    &:nth-child(odd) {
+      border-right: 1px solid var(--rule);
+    }
+
+    &:nth-child(-n + 2) {
+      border-bottom: 1px solid var(--rule);
+    }
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    padding: 16px 20px;
+  }
 }
 
 .hero__stat-key {
@@ -116,4 +153,8 @@
 .hero__stat-val {
   font-size: $text-stat;
   font-weight: 500;
+
+  @media (max-width: #{$bp-sm}) {
+    font-size: 28px;
+  }
 }

@@ -7,6 +7,14 @@
   align-items: center;
   padding: 28px $spacing-section-x;
   font-size: $text-label;
+
+  @media (max-width: #{$bp-md}) {
+    padding: 20px $spacing-section-x-md;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    padding: $spacing-section-x-sm;
+  }
 }
 
 .nav__brand {
@@ -21,12 +29,51 @@
 
 .nav__role {
   color: var(--ink-3);
+
+  @media (max-width: #{$bp-sm}) {
+    display: none;
+  }
 }
 
 .nav__links {
   display: flex;
   gap: 24px;
   opacity: 0.7;
+
+  @media (max-width: #{$bp-md}) {
+    display: none;
+    position: absolute;
+    top: calc(100% - 4px);
+    right: $spacing-section-x-md;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 4px 20px;
+    flex-direction: column;
+    gap: 0;
+    opacity: 1;
+    z-index: 100;
+    box-shadow: 0 8px 24px -8px oklch(0.24 0.04 220 / 0.12);
+
+    a {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--rule);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    right: $spacing-section-x-sm;
+  }
+
+  &--open {
+    @media (max-width: #{$bp-md}) {
+      display: flex;
+    }
+  }
 
   a {
     text-decoration: none;
@@ -47,4 +94,34 @@
 
 .nav__meta {
   color: var(--ink-2);
+
+  @media (max-width: #{$bp-md}) {
+    display: none;
+  }
+}
+
+.nav__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-size: 18px;
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.15s;
+
+  &:hover {
+    background: var(--paper-2);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: #{$bp-md}) {
+    display: block;
+  }
 }

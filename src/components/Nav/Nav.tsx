@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { BIO } from '../../data/content';
 import styles from './Nav.module.scss';
 
 export function Nav() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className={`${styles['nav']} mono`}>
       <div className={styles['nav__brand']}>
@@ -17,14 +20,23 @@ export function Nav() {
         <span className={styles['nav__role']}>/ {BIO.role.toLowerCase()}</span>
       </div>
 
-      <div className={styles['nav__links']}>
-        <a href="#work">work</a>
-        <a href="#about">about</a>
-        <a href="#principles">principles</a>
-        <a href="#contact">contact</a>
+      <div className={`${styles['nav__links']} ${menuOpen ? styles['nav__links--open'] : ''}`}>
+        <a href="#work" onClick={() => setMenuOpen(false)}>work</a>
+        <a href="#about" onClick={() => setMenuOpen(false)}>about</a>
+        <a href="#principles" onClick={() => setMenuOpen(false)}>principles</a>
+        <a href="#contact" onClick={() => setMenuOpen(false)}>contact</a>
       </div>
 
       <div className={styles['nav__meta']}>open to advise · {BIO.location}</div>
+
+      <button
+        className={styles['nav__hamburger']}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={menuOpen}
+      >
+        {menuOpen ? '✕' : '☰'}
+      </button>
     </nav>
   );
 }

@@ -4,6 +4,14 @@
   padding: $spacing-section-y $spacing-section-x;
   background: var(--ink);
   color: var(--paper);
+
+  @media (max-width: #{$bp-md}) {
+    padding: 80px 24px;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    padding: 60px 16px;
+  }
 }
 
 .principles__inner {
@@ -28,12 +36,27 @@
     font-style: italic;
     color: var(--moss-light);
   }
+
+  @media (max-width: #{$bp-md}) {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
 }
 
 .principles__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 48px 64px;
+
+  @media (max-width: #{$bp-md}) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 .principles__item {

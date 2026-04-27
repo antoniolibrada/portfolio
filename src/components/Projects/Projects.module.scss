@@ -3,6 +3,14 @@
 .projects {
   padding: $spacing-section-y $spacing-section-x;
   background: var(--paper);
+
+  @media (max-width: #{$bp-md}) {
+    padding: 80px 24px;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    padding: 60px 16px;
+  }
 }
 
 .projects__inner {
@@ -30,12 +38,26 @@
     font-style: italic;
     color: var(--teal-deep);
   }
+
+  @media (max-width: #{$bp-md}) {
+    font-size: 40px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: #{$bp-sm}) {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
 }
 
 .projects__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 24px;
+
+  @media (max-width: #{$bp-card}) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .projects__card {

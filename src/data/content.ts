@@ -106,5 +106,4 @@ export const LINKS: Link[] = [
   { label: 'Email',    value: 'me@antoniolibrada.com' },
   { label: 'LinkedIn', value: 'linkedin.com/in/antoniolibrada' },
   { label: 'GitHub',   value: 'github.com/antoniolibrada' },
-  { label: 'Phone',    value: '+43 664 8874 9279' },
 ];

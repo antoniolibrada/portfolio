@@ -42,76 +42,76 @@ export type Link = {
 };
 
 export const BIO: Bio = {
-  name: 'Nico Alvarez',
-  role: 'Engineering Manager — Platform',
-  location: 'Lisbon / Remote',
-  tagline: 'I build calm teams that ship ambitious software.',
+  name: 'Antonio Librada',
+  role: 'Engineering Manager',
+  location: 'Salzburg, Austria',
+  tagline: 'I build safe environments where engineers grow and teams ship ambitious software.',
   about:
-    "I've spent a decade moving between IC and leadership at companies small enough to feel the impact and large enough to feel the weight. I care about clarity, durable systems, and the people who maintain them.",
-  email: 'nico@somewhere.dev',
-  years: 11,
-  reports: 14,
+    'Accomplished engineer with 10 years of experience in software development, including over 5 years of experience managing, leading and building engineering teams with strong focus on creating safe environments for developers to grow, reach their potential and improve their skills. Successfully delivered projects keeping an agile mindset to adapt to changing requirements.',
+  email: 'me@antoniolibrada.com',
+  years: 10,
+  reports: 6,
   teams: 3,
 };
 
 export const TIMELINE: TimelineEntry[] = [
-  { year: '2024 — now',  org: 'Helio',     role: 'Engineering Manager, Platform',   note: 'Three squads, ~14 engineers. Infra, SDK, and DX.' },
-  { year: '2022 — 2024', org: 'Helio',     role: 'Staff Engineer → EM',             note: 'Led the migration off the monolith. Then hired the team to maintain it.' },
-  { year: '2019 — 2022', org: 'Kettle',    role: 'Senior Engineer, Core',           note: 'Built the routing layer that survived the Series C.' },
-  { year: '2017 — 2019', org: 'Oddbird',   role: 'Full-stack Engineer',             note: 'First five engineers. Wore a lot of hats.' },
-  { year: '2015 — 2017', org: 'Freelance', role: 'Frontend & Prototyping',          note: 'Shipped a new thing every six weeks.' },
+  { year: '2020 — now',  org: 'Red Bull Media House', role: 'Engineering Manager',    note: 'Cross-functional team of 6 engineers. Cloud architecture, talent management tools, and product development using Domain Driven Design.' },
+  { year: '2017 — 2020', org: 'Red Bull Media House', role: 'Lead Software Engineer', note: 'Led brand products (Cartoons, Energydrink, Organics). Improved architecture, logging, and metrics. Streamlined workflows and stakeholder management.' },
+  { year: '2016 — 2017', org: 'Red Bull Media House', role: 'Developer Advocate',     note: 'Technical advisor for global web campaigns. Led complex CMS projects including Red Bull Racing and Red Bull Cliff Diving.' },
+  { year: '2015 — 2016', org: 'Red Bull Media House', role: 'Full Stack Developer',   note: 'Built RedBull.com — millions of daily users across 30+ languages and 170+ countries. Co-built the CMS from scratch.' },
+  { year: '2013 — 2015', org: '3 Banken EDV',         role: 'Lead Frontend Developer', note: 'Banking front-end applications. Established JavaScript standards and led internal front-end workshops.' },
+  { year: '2012 — 2013', org: 'Playence',             role: 'Software Developer',     note: 'Java/Spring enterprise search engine. First deep dive into JavaScript for UI-heavy interfaces.' },
 ];
 
 export const PROJECTS: Project[] = [
   {
     tag: 'Platform',
-    title: 'The Quiet Rewrite',
-    blurb: 'Migrated a 400k-LOC monolith to a modular runtime without freezing feature work. Two years, zero incidents attributable to the migration.',
-    metric: '0 rollback',
-    year: '2023',
+    title: 'RedBull.com',
+    blurb: 'High-end performance web application visited by millions of users per day in 30+ languages and 170+ countries, built using cutting-edge front-end architectures and technologies.',
+    metric: '170+ countries',
+    year: '2015',
   },
   {
-    tag: 'Hiring',
-    title: 'Fifteen in Eighteen',
-    blurb: 'Grew the platform org from 4 to 19 engineers while keeping attrition below 4%. Designed the interview loop we still use.',
-    metric: '4% attrition',
-    year: '2022–24',
+    tag: 'Performance',
+    title: 'Kotlin Backend Overhaul',
+    blurb: 'Led backend development in Kotlin cutting average response times from 3s to 150ms, and rebuilt the front-end in React improving Lighthouse score from 14 to 83.',
+    metric: '20× faster',
+    year: '2021',
   },
   {
-    tag: 'Developer experience',
-    title: 'Minutes, not Mondays',
-    blurb: 'Rebuilt local dev tooling: cold start 11m → 40s, CI p95 22m → 6m. The team noticed.',
-    metric: '27× faster',
-    year: '2024',
+    tag: 'Talent',
+    title: 'Recruitment Portal Relaunch',
+    blurb: 'Led the relaunch of the Red Bull Recruitment Portal, adapting the cloud architecture and internal talent management tools to improve employee engagement while ensuring data privacy.',
+    metric: 'Cloud-native',
+    year: '2022',
   },
   {
-    tag: 'Open source',
-    title: 'tilt-cli',
-    blurb: 'A tiny CLI for managing long-running engineering rituals. 3.2k stars, mostly because it stays out of the way.',
-    metric: '3.2k ★',
-    year: 'ongoing',
+    tag: 'CMS',
+    title: 'Global Content Platform',
+    blurb: 'Built a CMS from scratch supporting hundreds of editors in 170 countries, delivering content to millions via RedBull.com, Red Bull TV, and ServusTV.',
+    metric: '170 countries',
+    year: '2018',
   },
 ];
 
 export const PRINCIPLES: Principle[] = [
-  { k: '01', h: 'Calm is a feature',    p: 'On-call, review queues, and planning cycles are products. If they feel loud, I fix them before I ship anything else.' },
-  { k: '02', h: 'Write the memo',        p: 'If a decision is worth making, it\'s worth a paragraph. If it\'s worth a paragraph, it\'s worth reading a week from now.' },
-  { k: '03', h: 'Default to the boring', p: 'Postgres, plaintext, plain functions. Exciting technology is the kind you can reason about at 2am.' },
-  { k: '04', h: 'People over process',   p: 'Process is scaffolding. Scaffolding comes down when the building stands.' },
-  { k: '05', h: 'Keep the door open',    p: 'I work for the engineers who report to me — not the other way around.' },
+  { k: '01', h: 'Safety is a feature',       p: 'Engineers do their best work when they feel safe to experiment, fail, and grow. I build that environment before optimising for anything else.' },
+  { k: '02', h: 'Grow your people',           p: 'A manager\'s output is the output of their team. I invest in each engineer\'s growth because it compounds across everything we build.' },
+  { k: '03', h: 'Agile over rigid',           p: 'Requirements change — plans should too. An agile mindset means delivering value continuously, not waiting for the perfect spec.' },
+  { k: '04', h: 'Quality and speed together', p: 'Meeting deadlines and keeping quality are not in opposition. I push for both, and when they conflict, we talk about it openly.' },
+  { k: '05', h: 'Cross-functional by default', p: 'The best solutions come from engineers, designers, and product working shoulder to shoulder — not from handoffs across silos.' },
 ];
 
 export const STACK: StackGroup[] = [
-  { g: 'Languages',  items: ['TypeScript', 'Go', 'Python', 'Rust (hobby)'] },
-  { g: 'Runtime',    items: ['Postgres', 'Kafka', 'Redis', 'NATS'] },
-  { g: 'Infra',      items: ['Kubernetes', 'Terraform', 'Pulumi', 'GitHub Actions'] },
-  { g: 'Leadership', items: ['1:1s as ritual', 'Written decisions', 'Blameless post-mortems', 'Career ladders'] },
+  { g: 'Back-end',   items: ['Java', 'Kotlin', 'Node.js', 'Spring'] },
+  { g: 'Front-end',  items: ['React', 'Svelte', 'TypeScript'] },
+  { g: 'Cloud',      items: ['Terraform', 'AWS'] },
+  { g: 'Leadership', items: ['Cross-functional teams', 'Domain Driven Design', 'Agile / Scrum', 'Career development'] },
 ];
 
 export const LINKS: Link[] = [
-  { label: 'Email',   value: 'nico@somewhere.dev' },
-  { label: 'GitHub',  value: 'github.com/nico' },
-  { label: 'LinkedIn',value: 'in/nico-alvarez' },
-  { label: 'Writing', value: 'nico.place/notes' },
-  { label: 'Résumé',  value: 'resume.pdf' },
+  { label: 'Email',    value: 'me@antoniolibrada.com' },
+  { label: 'LinkedIn', value: 'linkedin.com/in/antoniolibrada' },
+  { label: 'GitHub',   value: 'github.com/antoniolibrada' },
+  { label: 'Phone',    value: '+43 664 8874 9279' },
 ];

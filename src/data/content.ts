@@ -65,32 +65,25 @@ export const TIMELINE: TimelineEntry[] = [
 
 export const PROJECTS: Project[] = [
   {
-    tag: 'Platform',
+    tag: 'Editorial platform',
     title: 'RedBull.com',
-    blurb: 'High-end performance web application visited by millions of users per day in 30+ languages and 170+ countries, built using cutting-edge front-end architectures and technologies.',
+    blurb: 'Contributed as frontend engineer and co-architected the full editorial stack — from the editors\' CMS backend through to the end-user experience — serving millions of daily users across 30+ languages and 170+ countries.',
     metric: '170+ countries',
     year: '2015',
   },
   {
-    tag: 'Performance',
-    title: 'Kotlin Backend Overhaul',
-    blurb: 'Led backend development in Kotlin cutting average response times from 3s to 150ms, and rebuilt the front-end in React improving Lighthouse score from 14 to 83.',
-    metric: '20× faster',
-    year: '2021',
+    tag: 'Refactor',
+    title: 'jobs.redbull.com',
+    blurb: 'Complete architectural overhaul of the recruitment platform with zero downtime throughout. Redesigned the cloud setup, improved performance, cut infrastructure costs, and accelerated time to market.',
+    metric: '0 downtime',
+    year: '2019',
   },
   {
-    tag: 'Talent',
-    title: 'Recruitment Portal Relaunch',
-    blurb: 'Led the relaunch of the Red Bull Recruitment Portal, adapting the cloud architecture and internal talent management tools to improve employee engagement while ensuring data privacy.',
-    metric: 'Cloud-native',
+    tag: 'Rewrite',
+    title: 'Wingfinder',
+    blurb: 'Full rewrite with no agency handover or usable requirements. Reverse-engineered the product, then designed and built the frontend and cloud architecture from scratch to support millions of users a month.',
+    metric: 'M+ users/month',
     year: '2022',
-  },
-  {
-    tag: 'CMS',
-    title: 'Global Content Platform',
-    blurb: 'Built a CMS from scratch supporting hundreds of editors in 170 countries, delivering content to millions via RedBull.com, Red Bull TV, and ServusTV.',
-    metric: '170 countries',
-    year: '2018',
   },
 ];
 

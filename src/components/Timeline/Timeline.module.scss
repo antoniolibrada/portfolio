@@ -5,11 +5,11 @@
   background: var(--paper-2);
 
   @media (max-width: #{$bp-md}) {
-    padding: 80px 24px;
+    padding: $spacing-section-y-md $spacing-section-x-md;
   }
 
   @media (max-width: #{$bp-sm}) {
-    padding: 60px 16px;
+    padding: $spacing-section-y-sm $spacing-section-x-sm;
   }
 }
 

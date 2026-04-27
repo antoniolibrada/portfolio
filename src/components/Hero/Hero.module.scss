@@ -20,12 +20,12 @@
 
   @media (max-width: #{$bp-md}) {
     grid-template-columns: 1fr;
-    padding: 60px 24px 80px;
+    padding: $spacing-section-y-sm $spacing-section-x-md $spacing-section-y-md;
     gap: 40px;
   }
 
   @media (max-width: #{$bp-sm}) {
-    padding: 48px 16px 60px;
+    padding: 48px $spacing-section-x-sm $spacing-section-y-sm;
     gap: 32px;
   }
 }

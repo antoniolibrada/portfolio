@@ -69,7 +69,7 @@ describe('ConstellationField', () => {
     roMock = { observe: vi.fn(), disconnect: vi.fn() };
     // ResizeObserver must be a real constructor (not an arrow fn) so `new` works
     vi.stubGlobal('ResizeObserver', vi.fn(function MockRO(
-      this: { observe: () => void; disconnect: () => void },
+      this: Record<string, unknown>,
       cb: ResizeObserverCallback,
     ) {
       roCallback = cb;

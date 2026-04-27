@@ -22,6 +22,7 @@ jobs:
         with:
           # Full history so snapshot commits can be pushed back on dispatch
           fetch-depth: 0
+          lfs: true
 
       - uses: actions/setup-node@v4
         with:

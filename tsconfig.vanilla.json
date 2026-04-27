@@ -14,6 +14,6 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/vanilla"],
+  "include": ["src/vanilla", "src/data"],
   "exclude": ["src/vanilla/*.test.ts"]
 }

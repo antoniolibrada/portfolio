@@ -1,4 +1,47 @@
-export const BIO = {
+export type Bio = {
+  name: string;
+  role: string;
+  location: string;
+  tagline: string;
+  about: string;
+  email: string;
+  years: number;
+  reports: number;
+  teams: number;
+};
+
+export type TimelineEntry = {
+  year: string;
+  org: string;
+  role: string;
+  note: string;
+};
+
+export type Project = {
+  tag: string;
+  title: string;
+  blurb: string;
+  metric: string;
+  year: string;
+};
+
+export type Principle = {
+  k: string;
+  h: string;
+  p: string;
+};
+
+export type StackGroup = {
+  g: string;
+  items: string[];
+};
+
+export type Link = {
+  label: string;
+  value: string;
+};
+
+export const BIO: Bio = {
   name: 'Nico Alvarez',
   role: 'Engineering Manager — Platform',
   location: 'Lisbon / Remote',
@@ -11,7 +54,7 @@ export const BIO = {
   teams: 3,
 };
 
-export const TIMELINE = [
+export const TIMELINE: TimelineEntry[] = [
   { year: '2024 — now',  org: 'Helio',     role: 'Engineering Manager, Platform',   note: 'Three squads, ~14 engineers. Infra, SDK, and DX.' },
   { year: '2022 — 2024', org: 'Helio',     role: 'Staff Engineer → EM',             note: 'Led the migration off the monolith. Then hired the team to maintain it.' },
   { year: '2019 — 2022', org: 'Kettle',    role: 'Senior Engineer, Core',           note: 'Built the routing layer that survived the Series C.' },
@@ -19,7 +62,7 @@ export const TIMELINE = [
   { year: '2015 — 2017', org: 'Freelance', role: 'Frontend & Prototyping',          note: 'Shipped a new thing every six weeks.' },
 ];
 
-export const PROJECTS = [
+export const PROJECTS: Project[] = [
   {
     tag: 'Platform',
     title: 'The Quiet Rewrite',
@@ -50,7 +93,7 @@ export const PROJECTS = [
   },
 ];
 
-export const PRINCIPLES = [
+export const PRINCIPLES: Principle[] = [
   { k: '01', h: 'Calm is a feature',    p: 'On-call, review queues, and planning cycles are products. If they feel loud, I fix them before I ship anything else.' },
   { k: '02', h: 'Write the memo',        p: 'If a decision is worth making, it\'s worth a paragraph. If it\'s worth a paragraph, it\'s worth reading a week from now.' },
   { k: '03', h: 'Default to the boring', p: 'Postgres, plaintext, plain functions. Exciting technology is the kind you can reason about at 2am.' },
@@ -58,14 +101,14 @@ export const PRINCIPLES = [
   { k: '05', h: 'Keep the door open',    p: 'I work for the engineers who report to me — not the other way around.' },
 ];
 
-export const STACK = [
+export const STACK: StackGroup[] = [
   { g: 'Languages',  items: ['TypeScript', 'Go', 'Python', 'Rust (hobby)'] },
   { g: 'Runtime',    items: ['Postgres', 'Kafka', 'Redis', 'NATS'] },
   { g: 'Infra',      items: ['Kubernetes', 'Terraform', 'Pulumi', 'GitHub Actions'] },
   { g: 'Leadership', items: ['1:1s as ritual', 'Written decisions', 'Blameless post-mortems', 'Career ladders'] },
 ];
 
-export const LINKS = [
+export const LINKS: Link[] = [
   { label: 'Email',   value: 'nico@somewhere.dev' },
   { label: 'GitHub',  value: 'github.com/nico' },
   { label: 'LinkedIn',value: 'in/nico-alvarez' },
